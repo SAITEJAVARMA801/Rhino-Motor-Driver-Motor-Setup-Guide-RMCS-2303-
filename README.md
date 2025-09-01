@@ -120,6 +120,9 @@ Ros2 Setup & Teleoperation
             ros2 run teleop_twist_keyboard teleop_twist_keyboard 
 
 10. In your Keyboard press the following buttons displayed in the screen.
+
+
+11. You can use the same python file to receive velocity/cmd for autonomous navigation.(Create a package and then add the python file and build using colcon build)
    
 
 
