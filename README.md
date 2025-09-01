@@ -1,4 +1,4 @@
-# Rhino RMCS-2303 & Rhino Motors – Linux Modbus ASCII Setup & Control
+# Rhino RMCS-2303 & Rhino Motors – Modbus ASCII Setup & Control + Ros2 Teleoperation setup
 
 This project documents the complete setup and control process for Rhino RMCS-2303 Digital Servo Motor Drivers and Rhino High-Precision Servo Motors on Linux (Ubuntu), with a focus on Modbus ASCII communication using Python.
 
@@ -79,8 +79,56 @@ Ubuntu Setup:
     
 6. Change The Motor Direction  to ClockWise or Anti Clockwise in frames Section
         
-         CW enable = 0x0109
+         CW enable = 0x0101
          CCW enable = 0x0109
+
+Ros2 Setup & Teleoperation 
+----
+1. Install Ros2 Humble and Source 
+
+2. Open a terminal and create a directory
+
+        mkdir -p ./teleop_ws/src
+
+3. Open the directory
+
+       cd teleop_ws/src
+
+4. Create & edit python file 
+
+       touch teleop.py
+       nano teleop.py
+
+5. Copy and paste the teleop.py from the github repository
+
+6. Make it Executable using 
+
+        chmod +x teleop.py
+      ### Or Else you can build the package in the src folder of the workspace 
+
+7. Open a teminal and source the workspace 
+
+          cd teleop_ws/src
+          source install/setup.bash
+
+8. Run the python file either using ros2 or Python3
+           
+          python3 teleop.py
+
+9. Open new Terminal and run teleop_twist_keyboard
+
+            ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+
+10. In your Keyboard press the following buttons displayed in the screen.
+   
+
+
+
+
+
+
+
+
 
 
 References:
